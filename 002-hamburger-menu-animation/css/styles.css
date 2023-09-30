@@ -1,0 +1,199 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #242b28;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu {
+  width: 80px;
+  height: 52px;
+  cursor: pointer;
+}
+.menu .line {
+  width: 100%;
+  height: 8px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+.menu .line-1 {
+  -webkit-animation: reverse-line-1 0.7s ease-in-out forwards;
+          animation: reverse-line-1 0.7s ease-in-out forwards;
+}
+.menu .line-2 {
+  margin: 14px 0;
+  -webkit-animation: reverse-line-2 0.7s ease-in-out forwards;
+          animation: reverse-line-2 0.7s ease-in-out forwards;
+}
+.menu .line-3 {
+  -webkit-animation: reverse-line-3 0.7s ease-in-out forwards;
+          animation: reverse-line-3 0.7s ease-in-out forwards;
+}
+.menu.active .line-1 {
+  -webkit-animation: animate-line-1 0.7s ease-in-out forwards;
+          animation: animate-line-1 0.7s ease-in-out forwards;
+}
+.menu.active .line-2 {
+  -webkit-animation: animate-line-2 0.7s ease-in-out forwards;
+          animation: animate-line-2 0.7s ease-in-out forwards;
+}
+.menu.active .line-3 {
+  -webkit-animation: animate-line-3 0.7s ease-in-out forwards;
+          animation: animate-line-3 0.7s ease-in-out forwards;
+}
+
+.menu.initial .line-1,
+.menu.initial .line-2,
+.menu.initial .line-3 {
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+
+@-webkit-keyframes animate-line-1 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(22px) rotate(0);
+  }
+  100% {
+    transform: translateY(22px) rotate(45deg);
+  }
+}
+
+@keyframes animate-line-1 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(22px) rotate(0);
+  }
+  100% {
+    transform: translateY(22px) rotate(45deg);
+  }
+}
+@-webkit-keyframes reverse-line-1 {
+  0% {
+    transform: translateY(22px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(22px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+@keyframes reverse-line-1 {
+  0% {
+    transform: translateY(22px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(22px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+@-webkit-keyframes animate-line-2 {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes animate-line-2 {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes reverse-line-2 {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes reverse-line-2 {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes animate-line-3 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-22px) rotate(0);
+  }
+  100% {
+    transform: translateY(-22px) rotate(135deg);
+  }
+}
+@keyframes animate-line-3 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-22px) rotate(0);
+  }
+  100% {
+    transform: translateY(-22px) rotate(135deg);
+  }
+}
+@-webkit-keyframes reverse-line-3 {
+  0% {
+    transform: translateY(-22px) rotate(135deg);
+  }
+  50% {
+    transform: translateY(-22px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+@keyframes reverse-line-3 {
+  0% {
+    transform: translateY(-22px) rotate(135deg);
+  }
+  50% {
+    transform: translateY(-22px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}/*# sourceMappingURL=styles.css.map */
