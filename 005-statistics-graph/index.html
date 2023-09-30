@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Statistics Graph</title>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header--title">
+                    <h2>Weekly Report</h2>
+                    <p class="date">01. Feb - 07.Feb</p>
+                </div>
+                <div class="card-header--info">
+                    <h3>Revernue</h3>
+                    <p class="total">
+                        $3621.79
+                    </p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="indicators">
+                    <span class="primary">Views</span>
+                    <span class="secondary">Purchases</span>
+                </div>
+
+                <div class="stats">
+                    <div class="line-1"></div>
+                    <div class="line-2"></div>
+                    <div class="line-3"></div>
+
+                    <div class="data primary-line">
+                        <svg>
+                            <polyline points="9,46 50,12 90,23 130,11 171,38 211,48 251,19"></polyline>
+                        </svg>
+                        <div class="points">
+                            <div class="point-1">
+                                <div class="tooltip">410</div>
+                            </div>
+                            <div class="point-2">
+                                <div class="tooltip">720</div>
+                            </div>
+                            <div class="point-3">
+                                <div class="tooltip">650</div>
+                            </div>
+                            <div class="point-4">
+                                <div class="tooltip">830</div>
+                            </div>
+                            <div class="point-5">
+                                <div class="tooltip">512</div>
+                            </div>
+                            <div class="point-6">
+                                <div class="tooltip">400</div>
+                            </div>
+                            <div class="point-7">
+                                <div class="tooltip">617</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data secondary-line">
+                        <svg>
+                            <polyline points="9,61 50,50 90,65 130,55 171,61 211,74 251,64"></polyline>
+                        </svg>
+                        <div class="points">
+                            <div class="point-1">
+                                <div class="tooltip">26</div>
+                            </div>
+                            <div class="point-2">
+                                <div class="tooltip">41</div>
+                            </div>
+                            <div class="point-3">
+                                <div class="tooltip">22</div>
+                            </div>
+                            <div class="point-4">
+                                <div class="tooltip">35</div>
+                            </div>
+                            <div class="point-5">
+                                <div class="tooltip">24</div>
+                            </div>
+                            <div class="point-6">
+                                <div class="tooltip">12</div>
+                            </div>
+                            <div class="point-7">
+                                <div class="tooltip">20</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="days">
+                    <span>mon</span>
+                    <span>tue</span>
+                    <span>wed</span>
+                    <span>thu</span>
+                    <span>fri</span>
+                    <span>sat</span>
+                    <span>sun</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

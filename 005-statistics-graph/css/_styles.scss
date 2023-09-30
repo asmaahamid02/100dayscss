@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap');
+
+$primary: #ffc8dd;
+$secondary: #bde0fe;
+$bg-color: #cdb4db;
+$card-header: #ffafcc;
+$separator: #f2f2f2;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  background: $bg-color;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 270px;
+  // height: 190px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 8px 10px 12px rgba(0, 0, 0, 0.3);
+  color: #333;
+  overflow: hidden;
+
+  .card-header {
+    height: 65px;
+    padding: 1rem;
+    background: $card-header;
+    display: flex;
+    justify-content: space-between;
+
+    h2,
+    .total {
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    h3,
+    .date {
+      font-size: 0.75rem;
+
+      font-weight: 400;
+    }
+
+    .card-header--info {
+      h3,
+      .total {
+        text-align: right;
+      }
+    }
+  }
+
+  .card-body {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    .indicators {
+      padding-bottom: 0.5rem;
+      align-self: flex-end;
+
+      & > span {
+        font-size: 0.6rem;
+      }
+
+      & > span::before {
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border: 2px solid;
+        border-radius: 50%;
+        margin-right: 4px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+      }
+      .primary {
+        margin-right: 0.6rem;
+      }
+
+      .primary::before {
+        border-color: $primary;
+      }
+
+      .secondary::before {
+        border-color: $secondary;
+      }
+    }
+
+    .stats {
+      flex-grow: 1;
+      position: relative;
+      height: 80px;
+
+      .line-1 {
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 1px;
+        background: $separator;
+      }
+
+      .line-2 {
+        @extend .line-1;
+        top: 40px;
+      }
+
+      .line-3 {
+        @extend .line-1;
+        top: auto;
+        bottom: 0;
+      }
+
+      .data {
+        svg {
+          position: absolute;
+          inset: 0;
+        }
+
+        polyline {
+          fill: none;
+          stroke-width: 2;
+          stroke-linecap: round;
+        }
+
+        .tooltip {
+          position: absolute;
+          bottom: 16px;
+          left: 50%;
+          transform: translate(-50%, 10px);
+          font-size: 0.7rem;
+          padding: 0.5rem 0.4rem;
+          border-radius: 4px;
+          font-weight: 600;
+          color: #fff;
+          transition: all 0.3s ease-in-out;
+          visibility: hidden;
+          opacity: 0;
+
+          &::after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            left: 50%;
+            bottom: -3px;
+            margin-left: -3px;
+            transform: rotate(45deg);
+          }
+        }
+
+        [class^='point-'] {
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 5;
+
+          &:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+            transform: translate(-50%, 0);
+          }
+        }
+
+        &.primary-line {
+          polyline {
+            stroke: $primary;
+          }
+
+          [class^='point-'],
+          .tooltip,
+          .tooltip::after {
+            background: $primary;
+          }
+
+          .point-1 {
+            left: 7px;
+            top: 40px;
+          }
+
+          .point-2 {
+            left: 45px;
+            top: 9px;
+          }
+
+          .point-3 {
+            left: 86px;
+            top: 18px;
+          }
+
+          .point-4 {
+            left: 126px;
+            top: 7px;
+          }
+
+          .point-5 {
+            right: 80px;
+            top: 34px;
+          }
+
+          .point-6 {
+            right: 40px;
+            top: 43px;
+          }
+
+          .point-7 {
+            right: 0px;
+            top: 15px;
+          }
+        }
+
+        &.secondary-line {
+          polyline {
+            stroke: $secondary;
+          }
+
+          [class^='point-'],
+          .tooltip,
+          .tooltip::after {
+            background: $secondary;
+          }
+
+          .point-1 {
+            left: 7px;
+            bottom: 15px;
+          }
+
+          .point-2 {
+            left: 45px;
+            bottom: 25px;
+          }
+
+          .point-3 {
+            left: 86px;
+            bottom: 11px;
+          }
+
+          .point-4 {
+            left: 126px;
+            bottom: 20px;
+          }
+
+          .point-5 {
+            right: 80px;
+            bottom: 15px;
+          }
+
+          .point-6 {
+            right: 40px;
+            bottom: 3px;
+          }
+
+          .point-7 {
+            right: 0px;
+            bottom: 12px;
+          }
+        }
+      }
+    }
+
+    .days {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > span {
+        width: 100%;
+        font-size: 0.7rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 2rem;
+      }
+    }
+  }
+}
